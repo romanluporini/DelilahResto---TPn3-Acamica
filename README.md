@@ -3,7 +3,7 @@ _3rd proyecto del curso "Desarollo Web Full Stack"_
 
 &nbsp; 
 ## **Sistema de gestión de pedidos de un restaurant**
-Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gestión de pedidos que utilizaría un restaurant para dicho fin y en el proceso desarrollar las habilidades de back-end que involucra el desarrollo de éste sistema. Tales como: registro, autenticación con tokens (JWT), conexión a bases de datos relacional, entre otros.
+Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gestión de pedidos que utilizaría un restaurant para dicho fin y en el proceso desarrollar las habilidades de back-end que involucra el desarrollo de ésta aplicación. Tales como: registro, autenticación con tokens (JWT), conexión a bases de datos relacional, entre otros.
 
 
 ---
