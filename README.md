@@ -1,5 +1,5 @@
 # **DelilahResto---TPn3-Acamica**
-_3rd proyecto del curso Desarollo Web Full Stack_
+_3rd proyecto del curso "Desarollo Web Full Stack"_
 
 &nbsp; 
 ## **Sistema de gestión de pedidos de un restaurant**
