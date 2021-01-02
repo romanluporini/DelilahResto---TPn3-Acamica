@@ -22,7 +22,7 @@ _Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se enco
 
 &nbsp; 
 ### **Sign up** 
-Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguearte. En el caso del registro se puede hacer una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
+Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguear. En el caso del registro se puede hacer una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
 
 
 ![sign-up-GET-img](DelilahResto---TPn3-Acamica\src\images\sign-up-GET.png)
