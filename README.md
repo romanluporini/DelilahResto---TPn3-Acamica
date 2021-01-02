@@ -144,4 +144,4 @@ En el endpoint '/orders/:userId/:orderId' podremos editar el estado de la orden,
 
 **Eliminar ordenes**
 
-En el endpoint '/orders/:userId/:orderId' también podemos eliminar la orden. En éste caso como confirmación nos redirigirá a las ordenes que tiene en el historial el usuario y si no posee otras un array vacio.
+En el endpoint '/orders/:userId/:orderId' también podemos eliminar la orden. En éste caso como confirmación nos redirigirá a las ordenes que tiene en el historial el usuario y si no posee otras un array vacío.
