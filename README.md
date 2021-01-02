@@ -42,7 +42,7 @@ Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-
 ---
 &nbsp; 
 ### **Log in**
-De esa manera se habrá completado el registro y nos redirigirá hacia el endpoint de '/log-in'. De igual manera el servidor nos provee la información sobre los datos que debemos enviar.
+En el endpoint de '/log-in' de igual manera el servidor nos provee la información sobre los datos que debemos enviar.
 
 
 ![log-in-GET-img](DelilahResto---TPn3-Acamica\src\images\log-in-GET.png)
