@@ -6,7 +6,7 @@ logInCtlr = {};
 
 logInCtlr.read = (req, res) => {
   res.send(
-    "This is the log in page, authenticate yourself with your email and password"
+    "Estás en el endpoint '/login', para autenticarte debes ingresar:\n\n email:\n password:"
   );
 };
 
@@ -14,14 +14,13 @@ logInCtlr.create = async (req, res) => {
   try{
     const [userMatch] = await dbMatch("users", "email", req.body.email)
       if (userMatch.email && await bcrypt.compare(req.body.password, userMatch.password)) {
-        const token = jwt.sign({ userMatch }, process.env.TOKEN_JWT);
-        console.log(token);
-        res.redirect("menu");
+        const token = jwt.sign({ userMatch }, process.env.TOKEN_JWT);     
+        res.send("token: " + token + "\n\nEl 'id' del usuario es: " + userMatch.id)
       } else {
-        res.send("password incorrect, please try again");
+        res.send("contraseña incorrecta, por favor ingresa los datos nuevamente");
       }
   } catch {
-    res.send("user not registered, please sign up first");
+    res.send("usuario no registrado, por favor regístrese y luego ingrese");
   }
 }
 

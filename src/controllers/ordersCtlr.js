@@ -21,7 +21,7 @@ ordersCtlr.readManyFromOne = (req, res) => {
   try {
     const { userMatch } = jwt.decode(req.headers.authorization.split(" ")[1]);
     if (
-      req.params.userId === userMatch.id ||
+      parseInt(req.params.userId) === userMatch.id ||
       userMatch.role === process.env.ADMIN_ROLE
     ) {
       sequelize.authenticate().then(async () => {
@@ -44,7 +44,7 @@ ordersCtlr.read = (req, res) => {
   try {
     const { userMatch } = jwt.decode(req.headers.authorization.split(" ")[1]);
     if (
-      req.params.userId === userMatch.id ||
+      parseInt(req.params.userId) === userMatch.id ||
       userMatch.role === process.env.ADMIN_ROLE
     ) {
       sequelize.authenticate().then(async () => {
@@ -67,8 +67,9 @@ ordersCtlr.read = (req, res) => {
 ordersCtlr.create = async (req, res) => {
   try {
     const { userMatch } = jwt.decode(req.headers.authorization.split(" ")[1]);
+    
     if (
-      req.params.userId === userMatch.id ||
+      parseInt(req.params.userId) === userMatch.id ||
       userMatch.role === process.env.ADMIN_ROLE
     ) {
       const order = await orderProcessing(req.body);

@@ -7,7 +7,7 @@ trackingCtlr.read = async (req, res) => {
   try {
     const { userMatch } = jwt.decode(req.headers.authorization.split(" ")[1]);
     if (
-      req.params.userId === userMatch.id ||
+      parseInt(req.params.userId) === userMatch.id ||
       userMatch.role === process.env.ADMIN_ROLE
     ) {
       const [order] = await dbMatch("orders", "id", req.params.orderId);
