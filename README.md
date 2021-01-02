@@ -1,5 +1,5 @@
 # **DelilahResto---TPn3-Acamica**
-_3rd proyecto del curso "Desarollo Web Full Stack"_
+_3rd proyecto del curso Desarollo Web Full Stack_
 
 &nbsp; 
 ## **Sistema de gestión de pedidos de un restaurant**
@@ -25,7 +25,7 @@ _Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se enco
 Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguear. En el caso del registro se puede hacer una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
 
 
-![sign-up-GET-img](DelilahResto---TPn3-Acamica\src\images\sign-up-GET.png)
+![sign-up-GET-img](DelilahResto---TPn3-Acamica\images\sign-up-GET.png)
 
 
 Luego con una petición POST enviamos los datos en formato JSON: 
@@ -42,7 +42,7 @@ Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-
 ---
 &nbsp; 
 ### **Log in**
-En el endpoint de '/log-in' de igual manera el servidor nos provee la información sobre los datos que debemos enviar.
+De esa manera se habrá completado el registro y nos redirigirá hacia el endpoint de '/log-in'. De igual manera el servidor nos provee la información sobre los datos que debemos enviar.
 
 
 ![log-in-GET-img](DelilahResto---TPn3-Acamica\src\images\log-in-GET.png)
@@ -82,7 +82,7 @@ En el endpoint '/menu'. Ingresar todos los datos necesarios:
 
 ![menu-POST-img](DelilahResto---TPn3-Acamica\src\images\menu-POST.png)
 
-Como respuesta por parte del servidor obtendremos el "id" del nuevo plato.
+Como respuesta por parte del servidor obtendremos el nuevo plato con un "id" asignado automáticamente.
 
 #### **Editar plato**
 
@@ -90,7 +90,7 @@ En el endpoint '/menu/:id'. Ingresando todos los datos nuevamente y el que se de
 
 ![menu-PUT-img](DelilahResto---TPn3-Acamica\src\images\menu-PUT.png)
 
-Como respuesta por parte del servidor obtendremos información acerca de la cantidad de filas que fueron afectadas en la base de datos.
+Como respuesta por parte del servidor obtendremos el plato con las nuevas modificaciones.
 
 #### **Eliminar plato**
 
@@ -98,7 +98,7 @@ Haciendo la petición DELETE a éste endpoint '/menu/:id' se habrá eliminado el
 
 ![menu-DELETE-img](DelilahResto---TPn3-Acamica\src\images\menu-DELETE.png)
 
-Nuevamente por parte del servidor obtendremos información de las filas afectadas.
+Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 
 ---
 &nbsp; 
@@ -144,4 +144,4 @@ En el endpoint '/orders/:userId/:orderId' podremos editar el estado de la orden,
 
 **Eliminar ordenes**
 
-En el endpoint '/orders/:userId/:orderId' también podemos eliminar la orden. En éste caso como confirmación nos redirigirá a las ordenes que tiene en el historial el usuario y si no posee otras un array vacío.
+En el endpoint '/orders/:userId/:orderId' también podemos eliminar la orden. En éste caso como confirmación nos redirigirá a las ordenes que tiene en el historial el usuario y si no posee otras un array vacio.
