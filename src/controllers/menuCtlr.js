@@ -17,7 +17,7 @@ menuCtlr.readMany = (req, res) => {
 menuCtlr.read = (req, res) => {
   try {
     sequelize.authenticate().then(async () => {
-      const query = "SELECT * FROM `items` WHERE `id`=" + `${req.params.id};`;
+      const query = "SELECT * FROM `items` WHERE `id`=" + `'${req.params.id}';`;
       const [resultados] = await sequelize.query(query, { raw: true });
       res.json(resultados);
     });
@@ -33,7 +33,7 @@ menuCtlr.create = (req, res) => {
         "INSERT INTO `items` (description, price, photo) VALUES " +
         `('${req.body.description}', '${req.body.price}', '${req.body.photo}');`;
       const [resultados] = await sequelize.query(query, { raw: true });
-      res.json(resultados);
+      res.redirect("/menu/" + resultados);
     });
   } catch (err) {
     res.json(err);
@@ -53,7 +53,7 @@ menuCtlr.update = (req, res) => {
         " WHERE `id`=" +
         `'${req.params.id}';`;
       const [resultados] = await sequelize.query(query, { raw: true });
-      res.json(resultados);
+      res.redirect("/menu/" + req.params.id);
     });
   } catch (err) {
     res.json(err);
@@ -65,7 +65,7 @@ menuCtlr.delete = (req, res) => {
     sequelize.authenticate().then(async () => {
       const query = "DELETE FROM `items` WHERE `id`=" + `${req.params.id};`;
       const [resultados] = await sequelize.query(query, { raw: true });
-      res.json(resultados);
+      res.redirect("/menu");
     });
   } catch (err) {
     res.json(err);
