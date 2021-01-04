@@ -25,13 +25,13 @@ _Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se enco
 Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguear. En el caso del registro se puede hacer una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
 
 
-![sign-up-GET-img](images\sign-up-GET.png?raw=true)
+![sign-up-GET](https://user-images.githubusercontent.com/59923978/103498086-4ba6a880-4e22-11eb-91ea-28227ee60f3b.png)
 
 
 Luego con una petición POST enviamos los datos en formato JSON: 
 
 
-![sign-up-POST-img](images\sign-up-POST.png)
+![sign-up-POST](https://user-images.githubusercontent.com/59923978/103498087-4ba6a880-4e22-11eb-8166-2cc8a15d93fd.png)
 
 
 
@@ -45,7 +45,8 @@ Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-
 De esa manera se habrá completado el registro y nos redirigirá hacia el endpoint de '/log-in'. De igual manera el servidor nos provee la información sobre los datos que debemos enviar.
 
 
-![log-in-GET-img](images\log-in-GET.png)
+![log-in-GET](https://user-images.githubusercontent.com/59923978/103498070-48132180-4e22-11eb-8602-e28ba5418aa1.png)
+
 
 
 &nbsp; 
@@ -54,18 +55,20 @@ De esa manera se habrá completado el registro y nos redirigirá hacia el endpoi
 
 Cuando enviamos la petición el servidor nos devolverá un {token} el cual debemos copiar y pegar en la cabecera de nuestras futuras peticiones con la clave "Authorization" y valor "Bearer {token}" de lo contrario no podremos acceder a los servicios.
 
-![log-in-POST-img](images\log-in-POST.png)
+![log-in-POST](https://user-images.githubusercontent.com/59923978/103498074-48abb800-4e22-11eb-8ff9-0e565a258419.png)
+
 
 &nbsp;
 
-![token-img](images\token.png)
+![token](https://user-images.githubusercontent.com/59923978/103498089-4c3f3f00-4e22-11eb-9faa-aab8257dbe15.png)
+
 
 ---
 &nbsp; 
 ### **Menu**
 Una vez autenticado con nuestro token el próximo paso es obtener el menu para ver que plato podemos ordenar. Se puede visualizar el menú completo del restaurant en el endpoint '/menu'. 
 
-![menu-GET-img](images\menu-GET.png)
+![menu-GET](https://user-images.githubusercontent.com/59923978/103498077-49444e80-4e22-11eb-9901-e5163154393b.png)
 
 #### _*Se puede visualizar un solo plato del menu en el endpoint '/menu/:id'_
 
@@ -80,7 +83,7 @@ El usuario con rol ADMIN puede ingresar, editar y eliminar platos del menu hacie
 
 En el endpoint '/menu'. Ingresar todos los datos necesarios: 
 
-![menu-POST-img](images\menu-POST.png)
+![menu-POST](https://user-images.githubusercontent.com/59923978/103498079-49dce500-4e22-11eb-84f0-9ddb72ef75fd.png)
 
 Como respuesta por parte del servidor obtendremos el nuevo plato con un "id" asignado automáticamente.
 
@@ -90,7 +93,7 @@ _*Nota: El campo de "photo" se creó para ingresar la url de la imagen del plato
 
 En el endpoint '/menu/:id'. Ingresando todos los datos nuevamente y el que se desea cambiar con un valor diferente:
 
-![menu-PUT-img](images\menu-PUT.png)
+![menu-PUT](https://user-images.githubusercontent.com/59923978/103498080-49dce500-4e22-11eb-8a79-00eb8589c977.png)
 
 Como respuesta por parte del servidor obtendremos el plato con las nuevas modificaciones.
 
@@ -98,7 +101,7 @@ Como respuesta por parte del servidor obtendremos el plato con las nuevas modifi
 
 Haciendo la petición DELETE a éste endpoint '/menu/:id' se habrá eliminado el mismo. 
 
-![menu-DELETE-img](images\menu-DELETE.png)
+![menu-DELETE](https://user-images.githubusercontent.com/59923978/103498075-49444e80-4e22-11eb-8817-902f43ca3a64.png)
 
 Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 
@@ -109,22 +112,22 @@ Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 Para realizar una orden debemos enviar al endpoint '/orders/:userId' un array y dentro un objeto por _cada plato_ que queramos ordenar. Dentro de éste objeto debe tener el "id" del plato y la cantidad "qty" deseada. **Siempre como último elemento de éste array debemos especificar la manera en que haremos el pago.** 
 
 
-![order-POST-img](images\order-POST.png)
+![order-POST](https://user-images.githubusercontent.com/59923978/103498213-b821a780-4e22-11eb-9fb8-7e328c6d9eff.png)
 
 
 Como se puede ver en la imagen anterior por parte del servidor seremos redirigidos hacia el endpoint '/confirmation/:userId/:orderId' obtendremos una confirmación de la recepción del pedido y además nos brindará el endpoint al cuál debemos acceder para realizar el seguimiento de nuestra orden. Si enviamos dicha petición el servidor nos mostrará el estado de nuestro pedido.
 
 
-![order-tracking-GET-img](images\order-tracking-GET.png)
+![order-tracking-GET](https://user-images.githubusercontent.com/59923978/103498085-4b0e1200-4e22-11eb-9da2-851226a10017.png)
 
 
 Para ver un registro de todas las ordenes realizadas por un usuario podemos hacer una petición GET al endpoint '/orders/:userId'. 
 
-![orders-GET-img](images\orders-GET.png)
+![orders-GET](https://user-images.githubusercontent.com/59923978/103498084-4b0e1200-4e22-11eb-8528-f27f83e4e220.png)
 
 También podemos ver una sola orden en el endpoint '/orders/:userId/:orderId'
 
-![order-GET-img](images\order-GET.png)
+![order-GET](https://user-images.githubusercontent.com/59923978/103498082-4a757b80-4e22-11eb-9957-73ccfbc2fce2.png)
 
 _Importante: en éste endpoint se podrán ver datos de contacto del usuario_
 
@@ -141,7 +144,7 @@ En el endpoint '/orders' podemos ver todas las ordenes ordenadas decrecientement
 
 En el endpoint '/orders/:userId/:orderId' podremos editar el estado de la orden, **no la orden en si misma**. Debemos enviar un solo dato y es el estado con una petición PUT e inmediatamente el servidor nos responderá con el detalle de la orden ésta vez con el nuevo estado actualizado por el administrador.
 
-![order-PUT-img](images\order-PUT.png)
+![order-PUT](https://user-images.githubusercontent.com/59923978/103498083-4a757b80-4e22-11eb-916b-14e7dd4642c5.png)
 
 
 **Eliminar ordenes**
