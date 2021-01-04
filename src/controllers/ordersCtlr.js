@@ -1,4 +1,4 @@
-const sequelize = require("../dbConnection");
+const sequelize = require("../database/dbConnection");
 const jwt = require("jsonwebtoken");
 const { orderProcessing } = require("../helpers");
 
@@ -82,7 +82,7 @@ ordersCtlr.create = async (req, res) => {
           `${req.params.userId});`;
         const [resultados] = await sequelize.query(query, { raw: true });
         res.redirect(
-          "confirmation/" + `${req.params.userId}/` + `${resultados}`
+          `confirmation/${req.params.userId}/${resultados}`
         );
       });
     }

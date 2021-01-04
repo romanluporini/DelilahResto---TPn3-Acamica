@@ -1,14 +1,14 @@
-# **DelilahResto---TPn3-Acamica**
-_3rd proyecto del curso Desarollo Web Full Stack_
+# **Delilah Resto**
+_3rd proyecto del curso "Desarollo Web Full Stack" - Acámica_
 
 &nbsp; 
 ## **Sistema de gestión de pedidos de un restaurant**
-Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gestión de pedidos que utilizaría un restaurant para dicho fin y en el proceso desarrollar las habilidades de back-end que involucra el desarrollo de ésta aplicación. Tales como: registro, autenticación con tokens (JWT), conexión a bases de datos relacional, entre otros.
+Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gestión de pedidos que utilizaría un restaurant para dicho fin y en el proceso desarrollar las habilidades de back-end que involucra el desarrollo de ésta aplicación. Tales como: registro y log de usuarios, autenticación con tokens (JWT), conexión a bases de datos relacional, endpoint testing, entre otros.
 
 
 ---
 &nbsp; 
-### **Inicio** 
+## **Inicio** 
 
 Para iniciar el servidor y ponerlo a la escucha, ubicados en el directorio del proyecto, ejecutamos:
 
@@ -21,8 +21,8 @@ _Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se enco
 ---
 
 &nbsp; 
-### **Sign up** 
-Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguear. En el caso del registro se puede hacer una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
+## **Sign up** 
+Para iniciar en la aplicación se debe registrar como usuario y posteriormente loguear. En el caso del registro se hace una petición de tipo GET a la ruta '/sign-up' y ahí nos devolverá como respuesta los datos que debemos enviar al servidor para poder completarlo. 
 
 
 ![sign-up-GET](https://user-images.githubusercontent.com/59923978/103498086-4ba6a880-4e22-11eb-91ea-28227ee60f3b.png)
@@ -41,7 +41,7 @@ Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-
 
 ---
 &nbsp; 
-### **Log in**
+## **Log in**
 De esa manera se habrá completado el registro y nos redirigirá hacia el endpoint de '/log-in'. De igual manera el servidor nos provee la información sobre los datos que debemos enviar.
 
 
@@ -55,18 +55,18 @@ De esa manera se habrá completado el registro y nos redirigirá hacia el endpoi
 
 Cuando enviamos la petición el servidor nos devolverá un {token} el cual debemos copiar y pegar en la cabecera de nuestras futuras peticiones con la clave "Authorization" y valor "Bearer {token}" de lo contrario no podremos acceder a los servicios.
 
-![log-in-POST](https://user-images.githubusercontent.com/59923978/103498074-48abb800-4e22-11eb-8ff9-0e565a258419.png)
+![log-in-POST](https://user-images.githubusercontent.com/59923978/103552771-2d28c780-4e8b-11eb-8ae0-a2041f257db1.png)
 
 
 &nbsp;
 
-![token](https://user-images.githubusercontent.com/59923978/103498089-4c3f3f00-4e22-11eb-9faa-aab8257dbe15.png)
+![token](https://user-images.githubusercontent.com/59923978/103552955-7c6ef800-4e8b-11eb-8e50-80d6ae65f3f3.png)
 
 
 ---
 &nbsp; 
-### **Menu**
-Una vez autenticado con nuestro token el próximo paso es obtener el menu para ver que plato podemos ordenar. Se puede visualizar el menú completo del restaurant en el endpoint '/menu'. 
+## **Menu**
+Una vez autenticado con nuestro token el próximo paso lógico es obtener el menu para ver que plato podemos ordenar. Se puede visualizar el menú completo del restaurant en el endpoint '/menu'. 
 
 ![menu-GET](https://user-images.githubusercontent.com/59923978/103498077-49444e80-4e22-11eb-9901-e5163154393b.png)
 
@@ -101,13 +101,13 @@ Como respuesta por parte del servidor obtendremos el plato con las nuevas modifi
 
 Haciendo la petición DELETE a éste endpoint '/menu/:id' se habrá eliminado el mismo. 
 
-![menu-DELETE](https://user-images.githubusercontent.com/59923978/103498075-49444e80-4e22-11eb-8817-902f43ca3a64.png)
+![menu-DELETE](https://user-images.githubusercontent.com/59923978/103552028-00c07b80-4e8a-11eb-9983-3f5d484aa109.png)
 
 Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 
 ---
 &nbsp; 
-### **Orden**
+## **Orden**
 
 Para realizar una orden debemos enviar al endpoint '/orders/:userId' un array y dentro un objeto por _cada plato_ que queramos ordenar. Dentro de éste objeto debe tener el "id" del plato y la cantidad "qty" deseada. **Siempre como último elemento de éste array debemos especificar la manera en que haremos el pago.** 
 
@@ -115,7 +115,7 @@ Para realizar una orden debemos enviar al endpoint '/orders/:userId' un array y 
 ![order-POST](https://user-images.githubusercontent.com/59923978/103498213-b821a780-4e22-11eb-9fb8-7e328c6d9eff.png)
 
 
-Como se puede ver en la imagen anterior por parte del servidor seremos redirigidos hacia el endpoint '/confirmation/:userId/:orderId' obtendremos una confirmación de la recepción del pedido y además nos brindará el endpoint al cuál debemos acceder para realizar el seguimiento de nuestra orden. Si enviamos dicha petición el servidor nos mostrará el estado de nuestro pedido.
+Como se puede ver en la imagen anterior por parte del servidor seremos redirigidos hacia el endpoint '/confirmation/:userId/:orderId', donde obtendremos una confirmación de la recepción del pedido como respuesta, y además nos brindará el endpoint al cuál debemos acceder para realizar el seguimiento de nuestra orden. Si enviamos dicha petición el servidor nos mostrará el estado de nuestro pedido.
 
 
 ![order-tracking-GET](https://user-images.githubusercontent.com/59923978/103498085-4b0e1200-4e22-11eb-9da2-851226a10017.png)
@@ -132,7 +132,7 @@ También podemos ver una sola orden en el endpoint '/orders/:userId/:orderId'
 _Importante: en éste endpoint se podrán ver datos de contacto del usuario_
 
 &nbsp; 
-> ### usuario ADMIN
+>### usuario ADMIN
 #### **Ver todas las ordenes, editar y eliminar una orden**
 El usuario con rol ADMIN puede ver todas las ordenes ingresadas, actualizar el estado y eliminar las mismas haciendo uso de las peticiones GET, PUT y DELETE respectivamente.
 

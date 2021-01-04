@@ -1,4 +1,4 @@
-const sequelize = require("./dbConnection");
+const sequelize = require("./database/dbConnection");
 
 //preprocesa la orden y devuelve el total, el detalle y el medio de pago
 async function orderProcessing(requestBody) {

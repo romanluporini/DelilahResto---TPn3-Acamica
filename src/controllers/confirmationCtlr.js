@@ -10,11 +10,7 @@ confirmationCtlr.read = async (req, res) => {
       userMatch.role === process.env.ADMIN_ROLE
     ) {
       res.send(
-        "¡Recibimos tu pedido!\n" +
-          `${userMatch.user}` +
-          ", gracias por pedir en 'Delilah Resto' \npuedes seguir tu pedido en:\n\n /orders/tracking/" +
-          `${req.params.userId}/${req.params.orderId}`
-      );
+        `¡Recibimos tu pedido!\n ${userMatch.user}, gracias por pedir en 'Delilah Resto' \npuedes seguir tu pedido en:\n\n /orders/tracking/${req.params.userId}/${req.params.orderId}`);
     } else {
       res.sendStatus(404);
     }

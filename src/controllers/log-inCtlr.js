@@ -15,7 +15,7 @@ logInCtlr.create = async (req, res) => {
     const [userMatch] = await dbMatch("users", "email", req.body.email)
       if (userMatch.email && await bcrypt.compare(req.body.password, userMatch.password)) {
         const token = jwt.sign({ userMatch }, process.env.TOKEN_JWT);     
-        res.send("token: " + token + "\n\nEl 'id' del usuario es: " + userMatch.id)
+        res.send(`token: ${token}\n\n El 'id' del usuario es: ${userMatch.id}`)
       } else {
         res.send("contraseña incorrecta, por favor ingresa los datos nuevamente");
       }
