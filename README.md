@@ -8,15 +8,31 @@ Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gesti
 
 ---
 &nbsp; 
+## **Configuraciones** 
+
+Para poder correr ésta aplicación es necesario instalar algunas librerías de node.js, ubicados en el directorio del proyecto, ejecutamos:
+
+```bash
+   .../DelilahResto---TPn3-Acamica>npm i bcrypt dotenv express jsonwebtoken mysql2 nodemon sequelize
+``` 
+
+una vez finalizado en el archivo package.json el listado de "dependencies" debería verse así:
+
+![dependencies](https://user-images.githubusercontent.com/59923978/103581543-fd91b380-4eba-11eb-8b52-afc35b757dd6.png)
+
+
+
+---
+&nbsp; 
 ## **Inicio** 
 
-Para iniciar el servidor y ponerlo a la escucha, ubicados en el directorio del proyecto, ejecutamos:
+Para iniciar el servidor y ponerlo a la escucha, ejecutamos:
 
 ```bash
    .../DelilahResto---TPn3-Acamica>npm start
 ``` 
 
-_Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se encontrara disponible en el puerto 3000_
+_*Nota: El servidor iniciará por defecto en el puerto 5000 y si éste no se encontrara disponible en el puerto 3000*_
 
 ---
 
@@ -37,7 +53,7 @@ Luego con una petición POST enviamos los datos en formato JSON:
 
 Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-in'. 
 
-#### _Importante: No es posible crear usuarios con rol de administrador. Éste ya fue creado._
+_*Importante: No es posible crear usuarios con rol de administrador. Éste ya fue creado.*_
 
 ---
 &nbsp; 
@@ -66,11 +82,11 @@ Cuando enviamos la petición el servidor nos devolverá un {token} el cual debem
 ---
 &nbsp; 
 ## **Menu**
-Una vez autenticado con nuestro token el próximo paso lógico es obtener el menu para ver que plato podemos ordenar. Se puede visualizar el menú completo del restaurant en el endpoint '/menu'. 
+Una vez autenticado con nuestro token el próximo paso lógico es obtener el menu para ver que plato podemos ordenar. Se puede visualizar el menú completo (son un total de 10 items id=1 al 10) del restaurant en el endpoint '/menu'. 
 
 ![menu-GET](https://user-images.githubusercontent.com/59923978/103498077-49444e80-4e22-11eb-9901-e5163154393b.png)
 
-#### _*Se puede visualizar un solo plato del menu en el endpoint '/menu/:id'_
+_*Nota: Se puede visualizar un solo plato del menu en el endpoint '/menu/:id'_
 
 &nbsp; 
 > ### usuario ADMIN
@@ -81,29 +97,29 @@ El usuario con rol ADMIN puede ingresar, editar y eliminar platos del menu hacie
 
 #### **Ingresar plato**
 
-En el endpoint '/menu'. Ingresar todos los datos necesarios: 
+En el endpoint '/menu' ingresar todos los datos necesarios, como pueden verse en el resto de platos que figuran en el menú.
+Como respuesta por parte del servidor obtendremos el nuevo plato con un "id" asignado automáticamente.
 
 ![menu-POST](https://user-images.githubusercontent.com/59923978/103498079-49dce500-4e22-11eb-84f0-9ddb72ef75fd.png)
 
-Como respuesta por parte del servidor obtendremos el nuevo plato con un "id" asignado automáticamente.
-
-_*Nota: El campo de "photo" se creó para ingresar la url de la imagen del plato. En éste trabajo práctico no es requisito trabajar el diseño front-end de la app por eso se le asigna un string_
+_*Nota: El campo de "photo" se creó para ingresar la url de la imagen del plato. En éste trabajo práctico no es requisito trabajar el diseño front-end de la app por eso se le asigna un string*_
 
 #### **Editar plato**
 
-En el endpoint '/menu/:id'. Ingresando todos los datos nuevamente y el que se desea cambiar con un valor diferente:
+En el endpoint '/menu/:id'. Ingresando todos los datos nuevamente.
+Como respuesta por parte del servidor obtendremos el plato con las nuevas modificaciones.
 
 ![menu-PUT](https://user-images.githubusercontent.com/59923978/103498080-49dce500-4e22-11eb-8a79-00eb8589c977.png)
 
-Como respuesta por parte del servidor obtendremos el plato con las nuevas modificaciones.
+
 
 #### **Eliminar plato**
 
 Haciendo la petición DELETE a éste endpoint '/menu/:id' se habrá eliminado el mismo. 
+Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 
 ![menu-DELETE](https://user-images.githubusercontent.com/59923978/103552028-00c07b80-4e8a-11eb-9983-3f5d484aa109.png)
 
-Como respuesta por parte del servidor se redirigirá al endpoint '/menu'.
 
 ---
 &nbsp; 
@@ -127,9 +143,10 @@ Para ver un registro de todas las ordenes realizadas por un usuario podemos hace
 
 También podemos ver una sola orden en el endpoint '/orders/:userId/:orderId'
 
+_Importante: en éste endpoint se podrán ver datos de contacto del usuario_
+
 ![order-GET](https://user-images.githubusercontent.com/59923978/103498082-4a757b80-4e22-11eb-9957-73ccfbc2fce2.png)
 
-_Importante: en éste endpoint se podrán ver datos de contacto del usuario_
 
 &nbsp; 
 >### usuario ADMIN
