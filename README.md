@@ -10,17 +10,19 @@ Este es un proyecto NO COMERCIAL en el cuál se busca emular el sistema de gesti
 &nbsp; 
 ## **Configuraciones** 
 
-Para poder correr ésta aplicación es necesario instalar algunas librerías de node.js, ubicados en el directorio del proyecto, ejecutamos:
+Para poder correr ésta aplicación es necesario instalar algunas librerías de node.js. 
 
-```bash
-   .../DelilahResto---TPn3-Acamica>npm i bcrypt dotenv express jsonwebtoken mysql2 nodemon sequelize
-``` 
-
-una vez finalizado en el archivo package.json el listado de "dependencies" debería verse así:
+En el archivo package.json se encuentra el listado de "dependencies" que se deben instalar, debería verse así:
 
 ![dependencies](https://user-images.githubusercontent.com/59923978/103581543-fd91b380-4eba-11eb-8b52-afc35b757dd6.png)
 
 
+&nbsp;
+En la terminal de nuestro IDE y ubicados en el directorio del proyecto, ejecutamos el siguiente comando:
+
+```bash
+   .../DelilahResto---TPn3-Acamica>npm install
+``` 
 
 ---
 &nbsp; 
@@ -53,7 +55,7 @@ Luego con una petición POST enviamos los datos en formato JSON:
 
 Como respuesta si todo sale correctamente nos redireccionará al endpoint '/log-in'. 
 
-_*Importante: No es posible crear usuarios con rol de administrador. Éste ya fue creado.*_
+_*Importante: No es posible crear usuarios con rol de administrador. Éste ya fue creado. Sus datos son: "email":"admin@gmail.com", "password":"admin" y su "id":"1"*_
 
 ---
 &nbsp; 
